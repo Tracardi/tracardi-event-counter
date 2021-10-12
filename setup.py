@@ -4,17 +4,18 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name='Event_Counter',
-    version='0.1',
-    description='This plugin reads how many events of defined type were triggered with defined time',
+    name='tracardi-event-counter',
+    version='0.1.1',
+    description='This plugin reads how many events of defined type were triggered within defined time.',
     long_description=long_description,
     long_description_content_type="text/markdown",
     author='Dawid Kruk',
     author_email='krukdawid27@gmail.com',
-    packages=['Event_Counter'],
+    packages=['tracardi_event_counter'],
     install_requires=[
         'tracardi-plugin-sdk',
-        'tracardi'
+        'tracardi',
+        'pytimeparse'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",

@@ -21,9 +21,10 @@ Presence of ```"-"``` sign in timeSpan does not matter, since it is stripped any
 For more details, visit [pytimeparse library documentation](https://pypi.org/project/pytimeparse/).
 
 
-##Output
+## Output
 Plugin outputs instance of Result class, with ```"payload"``` as ```port```  and an integer representing number of
 events with selected type found in given ```"timeSpan"```, assigned to Result's ```value``` parameter.
+
 Example:
 ```
 port='payload'

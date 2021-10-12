@@ -1,2 +1,1 @@
-recursive-include Event_Counter/model *
-recursive-include Event_Counter/service *
+recursive-include tracardi_event_counter/model *
