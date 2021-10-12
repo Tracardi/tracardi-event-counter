@@ -7,4 +7,7 @@ class Configuration(BaseModel):
     time_span: str
 
     def get_time_span(self) -> int:
-        return int(parse(self.time_span.strip("-")))
+        result = parse(self.time_span.strip("-"))
+        if result is None:
+            raise ValueError("Could not parse {} as time span".format(self.time_span))
+        return int(result)

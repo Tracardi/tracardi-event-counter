@@ -42,7 +42,7 @@ def register() -> Plugin:
             className='EventCounter',
             inputs=["payload"],
             outputs=['payload'],
-            version='0.1',
+            version='0.1.1',
             license="MIT",
             author="Dawid Kruk",
             init={
