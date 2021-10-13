@@ -31,7 +31,7 @@ class EventCounter(ActionRunner):
                 ]
             }
         })
-        return Result(port="payload", value=result["hits"]["total"]["value"])
+        return Result(port="payload", value=result["hits"]["total"])
 
 
 def register() -> Plugin:
@@ -51,12 +51,12 @@ def register() -> Plugin:
             }
         ),
         metadata=MetaData(
-            name='Event Counter',
+            name='Event counter',
             desc='This plugin reads how many events of defined type were triggered within defined time.',
             type='flowNode',
             width=200,
             height=100,
-            icon='icon',
+            icon='event',
             group=["General"]
         )
     )
