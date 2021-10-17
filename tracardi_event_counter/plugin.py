@@ -45,6 +45,6 @@ def register() -> Plugin:
             width=200,
             height=100,
             icon='event',
-            group=["General"]
+            group=["Stats"]
         )
     )
