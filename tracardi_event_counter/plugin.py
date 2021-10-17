@@ -13,25 +13,13 @@ class EventCounter(ActionRunner):
         self.config = Configuration(**kwargs)
 
     async def run(self, payload) -> Result:
-        result = await storage.driver.event.search({
-            "bool": {
-                "must": [
-                    {
-                        "range": {
-                            "metadata.time.insert": {
-                                "gte": "now-{}s".format(self.config.get_time_span()),
-                                "lte": "now"}
-                        }
-                    },
-                    {
-                        "match": {
-                            "type": self.config.event_type
-                        }
-                    }
-                ]
-            }
-        })
-        return Result(port="payload", value=result["hits"]["total"])
+        print(self.config.event_type,
+            self.config.get_time_span())
+        no_of_events = await storage.driver.event.count_events_by_type(
+            self.config.event_type,
+            self.config.get_time_span()
+        )
+        return Result(port="payload", value={"events": no_of_events})
 
 
 def register() -> Plugin:
@@ -42,7 +30,7 @@ def register() -> Plugin:
             className='EventCounter',
             inputs=["payload"],
             outputs=['payload'],
-            version='0.1.1',
+            version='0.1.2',
             license="MIT",
             author="Dawid Kruk",
             init={
