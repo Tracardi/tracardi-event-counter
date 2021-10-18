@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='tracardi-event-counter',
-    version='0.1.1',
+    version='0.1.2',
     description='This plugin reads how many events of defined type were triggered within defined time.',
     long_description=long_description,
     long_description_content_type="text/markdown",
