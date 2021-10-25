@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='tracardi-event-counter',
-    version='0.1.2',
+    version='0.6.0',
     description='This plugin reads how many events of defined type were triggered within defined time.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -13,7 +13,7 @@ setup(
     author_email='krukdawid27@gmail.com',
     packages=['tracardi_event_counter'],
     install_requires=[
-        'tracardi-plugin-sdk',
+        'tracardi-plugin-sdk>=0.6.22',
         'tracardi',
         'pytimeparse'
     ],
